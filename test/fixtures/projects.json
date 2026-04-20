@@ -1,0 +1,26 @@
+{
+  "projects": [
+    {
+      "id": "prj_1",
+      "name": "my-hackathon-2024",
+      "framework": "nextjs",
+      "link": {
+        "type": "github",
+        "repo": "testuser/hack24",
+        "org": "testuser",
+        "repoId": 1
+      },
+      "latestDeployments": [{ "uid": "dpl_1", "createdAt": 1700000000000 }],
+      "updatedAt": 1700000000000
+    },
+    {
+      "id": "prj_2",
+      "name": "weekend-experiment",
+      "framework": "vite",
+      "link": null,
+      "latestDeployments": [],
+      "updatedAt": 1710000000000
+    }
+  ],
+  "pagination": { "count": 2, "next": null }
+}

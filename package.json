@@ -1,0 +1,57 @@
+{
+  "name": "vercel-bulk-delete-projects",
+  "version": "0.1.0",
+  "description": "Bulk operations on Vercel projects — list, filter, and safely delete many projects at once from your terminal.",
+  "keywords": [
+    "bulk",
+    "cleanup",
+    "cli",
+    "delete",
+    "projects",
+    "vercel"
+  ],
+  "homepage": "https://github.com/zietec/vercel-bulk-delete-projects#readme",
+  "bugs": {
+    "url": "https://github.com/zietec/vercel-bulk-delete-projects/issues"
+  },
+  "license": "MIT",
+  "author": "Carlos Ziegler <carlos.ziegler@zietec.io>",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zietec/vercel-bulk-delete-projects.git"
+  },
+  "bin": {
+    "vercel-bulk-delete-projects": "./dist/cli.mjs"
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "type": "module",
+  "scripts": {
+    "dev": "tsx src/cli.ts",
+    "build": "vp pack src/cli.ts --format esm --clean",
+    "typecheck": "tsc --noEmit",
+    "test": "vp test",
+    "check": "vp check",
+    "prepare": "vp config",
+    "prepublishOnly": "vp run build && vp test --run"
+  },
+  "dependencies": {
+    "@inquirer/prompts": "^7.0.0",
+    "commander": "^13.0.0",
+    "picocolors": "^1.1.0",
+    "zod": "^3.23.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "tsx": "^4.19.0",
+    "typescript": "~6.0.2",
+    "vite-plus": "catalog:"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "packageManager": "pnpm@10.33.0"
+}
