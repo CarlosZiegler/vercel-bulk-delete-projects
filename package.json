@@ -10,15 +10,15 @@
     "projects",
     "vercel"
   ],
-  "homepage": "https://github.com/zietec/vercel-bulk-delete-projects#readme",
+  "homepage": "https://github.com/CarlosZiegler/vercel-bulk-delete-projects#readme",
   "bugs": {
-    "url": "https://github.com/zietec/vercel-bulk-delete-projects/issues"
+    "url": "https://github.com/CarlosZiegler/vercel-bulk-delete-projects/issues"
   },
   "license": "MIT",
   "author": "Carlos Ziegler <carlos.ziegler@zietec.io>",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/zietec/vercel-bulk-delete-projects.git"
+    "url": "git+https://github.com/CarlosZiegler/vercel-bulk-delete-projects.git"
   },
   "bin": {
     "vercel-bulk-delete-projects": "./dist/cli.mjs"
