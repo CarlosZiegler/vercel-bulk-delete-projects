@@ -106,7 +106,8 @@ Just 4 production packages:
 
 ```bash
 # 1. Save your Vercel access token
-#    (create one at https://vercel.com/account/tokens)
+#    Create one at https://vercel.com/account/tokens
+#    (detailed walk-through below under Commands → login)
 vercel-bulk-delete-projects login
 
 # 2. Sanity check
@@ -165,6 +166,24 @@ vercel-bulk-delete-projects login
 ```
 
 If `VERCEL_TOKEN` is already set in your shell, `login` warns you that the env var will override the file.
+
+#### Where to get a Vercel token
+
+1. Go to **<https://vercel.com/account/tokens>** (or click **your avatar → Account Settings → Tokens** in the Vercel dashboard).
+2. Click **Create Token**.
+3. Fill in:
+   - **Name** — e.g. `vercel-bulk-delete` (purely a label for you).
+   - **Scope** — pick the **team** whose projects you want to delete. If you only have a personal account, there's just the one option. A token can't cross team boundaries — if you manage multiple teams, create one token per team (or use `--token` / `VERCEL_TOKEN` to swap them ad-hoc).
+   - **Expiration** — shorter is safer. 1 day or 7 days is plenty for a one-off cleanup; you can always create a new one.
+4. Click **Create** — **Vercel shows the token exactly once.** Copy it immediately.
+5. Paste it into the `login` prompt, or use one of the alternative ways:
+
+   ```bash
+   vercel-bulk-delete-projects login --token vercel_pat_xxx   # one-shot (warning: appears in shell history + `ps`)
+   export VERCEL_TOKEN=vercel_pat_xxx                         # current shell only, no file on disk
+   ```
+
+The token only needs the default scope of whatever team you pick — no extra permissions. The CLI calls `GET /v2/user`, `GET /v9/projects`, and `DELETE /v9/projects/:id`, all of which any regular Vercel token covers.
 
 ### `whoami`
 
